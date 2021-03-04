@@ -34,7 +34,8 @@ main :: IO ()
 main = Test.Tasty.defaultMain spec
 
 spec :: TestTree
-spec = testProperties "dlist" [
+spec = localOption (QuickCheckTests 10000) 
+    $ testProperties "dlist" [
       ("cons",         property prop_cons)
     , ("singleton",    property prop_singleton)
     , ("snoc",         property prop_snoc)
