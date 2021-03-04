@@ -5,12 +5,7 @@ import Data.DList
 import Data.DList.Internal
 
 instance (CoArbitrary a, Arbitrary a) => Arbitrary (DList a) where
-  arbitrary = do
-    b <- arbitrary
-    if b then do
-      x <- arbitrary
-      (x `cons`) <$> arbitrary
-    else return empty
+  arbitrary = foldr cons empty <$> listOf arbitrary
   shrink (DL f) = DL <$> shrink f
 
 instance Show a => Show (DList a) where
