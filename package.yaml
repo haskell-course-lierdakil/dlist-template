@@ -33,7 +33,7 @@ benchmarks:
     ghc-options:
     - -rtsopts
     - -threaded
-    - -with-rtsopts=-N
+    - -with-rtsopts "-N -H1G -M2G"
 
 tests:
   dlist-test-suite:

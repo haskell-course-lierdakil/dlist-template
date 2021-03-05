@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 69d903a9aab4228fbf0aba8d22b0f82a740bb9b0b522bebbb4db810ce8090f81
+-- hash: a6cff1eaf58a85eef632273e07e8fed646fbc1c5c97d49bbd44189d0d94a2b6f
 
 name:           dlist-custom
 version:        0.0.0
@@ -59,7 +59,7 @@ benchmark dlist-benchmarks
       Paths_dlist_custom
   hs-source-dirs:
       benchmark
-  ghc-options: -Wall -rtsopts -threaded -with-rtsopts=-N
+  ghc-options: -Wall -rtsopts -threaded -with-rtsopts "-N -H1G -M2G"
   build-depends:
       base
     , criterion
